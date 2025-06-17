@@ -2,6 +2,7 @@ import ErrorSelect from "@/components/select/ErrorSelect";
 import { useState } from "react";
 import { resetCallCount } from "@/api/posts";
 import { usePostsQuery } from "@/composable/usePostQuery";
+import DotSpinner from "@/components/loading/DotSpinner";
 
 export default function PostList() {
   const [errCount, setErrCount] = useState<number | null>(null);
@@ -10,7 +11,11 @@ export default function PostList() {
     usePostsQuery(errCount ?? 0);
 
   if (isLoading || isFetching)
-    return <p className="text-lg text-blue-600">Loading...</p>;
+    return (
+      <div className="min-h-screen items-center justify-center flex">
+        <DotSpinner></DotSpinner>
+      </div>
+    );
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">

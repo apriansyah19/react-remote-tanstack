@@ -4,7 +4,7 @@ import Title from "@/components/Title";
 
 export default function App() {
   return (
-    <div className="p-6 space-y-4">
+    <div className="space-y-4">
       <Title></Title>
       <Routes>
         <Route path="/" element={<Navigate to="/postsList" replace />} />
