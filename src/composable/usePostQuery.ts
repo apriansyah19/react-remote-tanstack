@@ -17,8 +17,8 @@ export function usePostsQuery(failUntilCount: number) {
     retryDelay: 1000,
     persister: persister.persisterFn,
     staleTime: 1000 * 10, // 10 detik
-    gcTime: 1000 * 10, // 10 detik,
-    refetchInterval: 10000, // Uncomment jika ingin polling tiap 10 detik
-    refetchIntervalInBackground: true,
+    gcTime: Infinity, //,
+    // refetchInterval: 10000, // Uncomment jika ingin polling tiap 10 detik
+    // refetchIntervalInBackground: true,
   });
 }
